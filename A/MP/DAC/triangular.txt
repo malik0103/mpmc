@@ -1,0 +1,10 @@
+START   MOV AL,00
+LOOP1:  OUT C8,AL
+        INC AL
+        CMP AL, FF
+        JB LOOP1
+LOOP2:  DEC AL
+        OUT C8,AL
+        CMP AL,00
+        JA LOOP2
+        JMP START

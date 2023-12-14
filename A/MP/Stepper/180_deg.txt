@@ -1,0 +1,15 @@
+        MOV BL,64
+START:  MOV CH, 00
+        MOV DI, 1100        ;DL
+        MOV CL,04
+NEXT:   MOV AL,[DI]
+        OUT 0C0, AL
+        DEC BL
+        JZ STOP
+        MOV DX,1111
+DELAY:  DEC DX
+        JNZ DELAY
+        INC DI
+        LOOP NEXT
+        JMP START
+STOP:   HLT

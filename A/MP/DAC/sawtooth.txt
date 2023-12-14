@@ -1,0 +1,6 @@
+START   MOV AL,7F
+LOOP1   OUT C8, AL
+        INC AL
+        CMP AL, FF
+        JB LOOP1
+        JMP START

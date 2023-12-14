@@ -1,0 +1,13 @@
+START:  MOV CL,04
+        MOV SI,3000
+LABEL:  MOV AL,[SI]
+        OUT C0, AL
+        CALL DELAY
+        INC SI
+        LOOP LABEL
+        JMP START
+
+DELAY   MOV BX,1010
+WAIT    DEC BX
+        JNZ WAIT
+        RET

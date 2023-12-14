@@ -1,0 +1,11 @@
+START:   MOV AL,00
+        OUT C8,AL
+        CALL DELAY
+        MOV AL,0FF
+        OUT C8, AL
+        CALL DELAY
+        JMP START
+DELAY:  MOV CX,70
+L1:     DEC CX
+        JNZ L1
+        RET
